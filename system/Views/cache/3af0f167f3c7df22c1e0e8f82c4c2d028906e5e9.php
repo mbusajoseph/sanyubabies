@@ -41,7 +41,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <img src="<?php echo e(asset('imgs/icons/logo.png')); ?>" class="rounded-circle" height="50" alt="logo"/>
                 </div>
-                <div class="sidebar-brand-text mx-3">SANYA BABIES HOME</div>
+                <div class="sidebar-brand-text mx-3">SANYU BABIES HOME</div>
             </a>
 
             <!-- Divider -->

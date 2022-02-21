@@ -11,7 +11,7 @@
 						<img src="<?php echo e(asset('imgs/site/Food-charity.jpg')); ?>" class="img" width="100%"/>
 						<h3>Sanyu Babies Home <i class="fas fa-check-circle text-success"></i> </h3>
 						<h5 class="text-muted">
-							Hello, welcome to Sanyu Charity Organisation. Please fill in the required details in the form provided in order to continue and donate Food to children at <span class="text-success">Sanyu Babies Home <i class="fas fa-heart text-danger"></i> </span>
+							Hello, welcome to Sanyu Babies Home. Please fill in the required details in the form provided in order to continue and donate Food to children at <span class="text-success">Sanyu Babies Home <i class="fas fa-heart text-danger"></i> </span>
 						</h5>
 					</div>
 

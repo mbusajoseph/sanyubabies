@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2021 at 08:31 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Generation Time: Feb 20, 2022 at 05:35 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -47,8 +48,19 @@ CREATE TABLE `clothes_donations` (
 --
 
 INSERT INTO `clothes_donations` (`id`, `email`, `categories`, `donated_at`, `month`, `renew`, `expected_on`, `donation_status`, `is_public`, `created_at`, `update_at`, `deleted_at`) VALUES
-(1, 'bridgetnamugema@gmail.com', 'Shirts,T-shirts,Jackets,Dresses,Skirts', '2021-12-07 10:36:48', '11', NULL, '2021-11-29', 'pending', 1, '2021-11-22 22:47:37', NULL, NULL),
-(2, 'violakomugisha@gmail.com', 'Shirts,Geans,Jackets,Underware,Dresses', '2021-12-20 17:47:35', '12', NULL, '2021-12-22', 'pending', 1, '2021-12-20 20:47:35', NULL, NULL);
+(1, 'bridgetnamugema@gmail.com', 'Shirts,T-shirts,Jackets,Dresses,Skirts', '2022-01-17 16:27:52', '11', NULL, '2021-11-29', 'Recieved', 1, '2021-11-22 22:47:37', NULL, NULL),
+(2, 'violakomugisha@gmail.com', 'Shirts,Geans,Jackets,Underware,Dresses', '2022-01-18 08:57:10', '12', NULL, '2021-12-22', 'Recieved', 1, '2021-12-20 20:47:35', NULL, NULL),
+(3, 'ashley7520charles@gmail.com', 'Shirts,Geans', '2022-01-18 08:56:38', '01', NULL, '2022-01-14', 'Recieved', 1, '2022-01-14 18:12:17', NULL, NULL),
+(4, 'mbusajoseph60@gmail.com', 'Shirts,T-shirts,Trousers', '2022-01-18 10:57:16', '01', NULL, '2022-01-18', 'Recieved', 0, '2022-01-18 13:57:00', NULL, NULL),
+(5, 'mbusajoseph60@gmail.com', 'Trousers,Geans', '2022-01-19 10:33:41', '01', NULL, '2022-01-19', 'Recieved', 1, '2022-01-19 13:29:40', NULL, NULL),
+(6, 'mbusajoseph60@gmail.com', 'Dresses', '2022-01-19 11:08:52', '01', NULL, '2022-01-19', 'Recieved', 0, '2022-01-19 14:08:10', NULL, NULL),
+(7, 'violakomugisha@gmail.com', 'Shirts,T-shirts', '2022-01-19 14:33:50', '01', NULL, '2022-01-19', 'Recieved', 1, '2022-01-19 17:04:29', NULL, NULL),
+(8, 'violakomugisha@gmail.com', 'Shirts,Jackets,Dresses', '2022-01-20 06:51:29', '01', NULL, '2022-01-20', 'Recieved', 1, '2022-01-20 09:50:03', NULL, NULL),
+(9, 'violakomugisha@gmail.com', 'Jackets,Underware,Suits', '2022-01-20 07:17:17', '01', NULL, '0000-00-00', 'Recieved', 1, '2022-01-20 10:16:12', NULL, NULL),
+(10, 'mbusajoseph60@gmail.com', 'Jackets,Underware,Suits,Skirts,Jumpers', '2022-01-25 12:18:34', '01', NULL, '2022-01-25', 'Recieved', 1, '2022-01-25 15:08:46', NULL, NULL),
+(11, 'mbusajoseph60@gmail.com', 'Shirts,T-shirts', '2022-02-05 17:30:57', '02', NULL, '2022-02-05', 'Recieved', 1, '2022-02-05 20:30:27', NULL, NULL),
+(12, 'douglaskikonyogo@gmail.com', 'Shirts,Trousers', '2022-02-20 16:26:29', '02', NULL, '2022-02-19', 'pending', 1, '2022-02-20 19:26:29', NULL, NULL),
+(13, 'douglaskikonyogo@gmail.com', 'Shirts,Trousers', '2022-02-20 16:28:02', '02', NULL, '2022-02-18', 'pending', 1, '2022-02-20 19:28:02', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -76,10 +88,20 @@ CREATE TABLE `food_donations` (
 --
 
 INSERT INTO `food_donations` (`id`, `email`, `categories`, `donated_at`, `month`, `renew`, `expected_on`, `donation_status`, `is_public`, `created_at`, `update_at`, `deleted_at`) VALUES
-(1, 'mbusajoseph@gmail.com', 'Matooke,Rice,Irish Potatoes,Pease,G-Nuts,Meat,Fish,Eggs', '2021-12-07 10:29:15', '11', NULL, '2021-12-13 00:00:00', 'pending', 1, '2021-11-22 22:51:32', NULL, NULL),
-(2, 'solomonkamukama@gmail.com', 'Matooke,Rice,Irish Potatoes,Cassave,Maize,Beans,Millet', '2021-12-07 10:29:19', '12', NULL, '2021-12-10 00:00:00', 'pending', 1, '2021-12-07 13:09:26', NULL, NULL),
-(3, 'chelimojoan@gmail.com', 'Matooke,Rice,Beans,Pease', '2021-12-07 10:29:23', '12', NULL, '2021-11-07 00:00:00', 'pending', 0, '2021-12-07 13:12:36', NULL, NULL),
-(4, 'lubinga.isaac@gmail.com', 'Posho,Rice,Sugar', '2021-12-16 10:41:50', '12', NULL, '2021-12-17 00:00:00', 'pending', 1, '2021-12-16 13:41:50', NULL, NULL);
+(1, 'mbusajoseph@gmail.com', 'Matooke,Rice,Irish Potatoes,Pease,G-Nuts,Meat,Fish,Eggs', '2022-01-17 16:23:55', '11', NULL, '2021-12-13 00:00:00', 'Recieved', 1, '2021-11-22 22:51:32', NULL, NULL),
+(2, 'solomonkamukama@gmail.com', 'Matooke,Rice,Irish Potatoes,Cassave,Maize,Beans,Millet', '2022-01-17 17:19:39', '12', NULL, '2021-12-10 00:00:00', 'Recieved', 1, '2021-12-07 13:09:26', NULL, NULL),
+(3, 'chelimojoan@gmail.com', 'Matooke,Rice,Beans,Pease', '2022-01-18 10:53:21', '12', NULL, '2021-11-07 00:00:00', 'Recieved', 0, '2021-12-07 13:12:36', NULL, NULL),
+(4, 'lubinga.isaac@gmail.com', 'Posho,Rice,Sugar', '2022-01-18 10:53:11', '12', NULL, '2021-12-17 00:00:00', 'Recieved', 1, '2021-12-16 13:41:50', NULL, NULL),
+(5, 'violakomugisha@gmail.com', 'sugar', '2022-01-18 10:52:58', '01', NULL, '2022-01-17 00:00:00', 'Recieved', 1, '2022-01-17 16:09:18', NULL, NULL),
+(6, 'mbusajoseph60@gmail.com', 'Matooke,Posho', '2022-01-18 11:54:47', '01', NULL, '0000-00-00 00:00:00', 'Recieved', 0, '2022-01-18 14:52:46', NULL, NULL),
+(7, 'mbusajoseph60@gmail.com', 'Matooke,Posho', '2022-01-18 11:54:55', '01', NULL, '2022-01-18 00:00:00', 'Recieved', 0, '2022-01-18 14:53:11', NULL, NULL),
+(8, 'mbusajoseph60@gmail.com', 'Matooke,Posho,Cassave', '2022-01-19 10:34:38', '01', NULL, '2022-01-19 00:00:00', 'Recieved', 0, '2022-01-19 13:31:42', NULL, NULL),
+(9, 'mbusajoseph60@gmail.com', 'Maize', '2022-01-19 11:11:34', '01', NULL, '2022-01-19 00:00:00', 'Recieved', 0, '2022-01-19 14:06:11', NULL, NULL),
+(10, 'violakomugisha@gmail.com', 'Matooke,Posho,Rice', '2022-02-11 09:54:18', '01', NULL, '2022-01-20 00:00:00', 'Recieved', 1, '2022-01-20 13:39:02', NULL, NULL),
+(11, 'mbusajoseph60@gmail.com', 'Matooke,Irish Potatoes,Sweet Potatoes,Cassave,G-Nuts', '2022-02-11 10:10:31', '01', NULL, '2022-01-25 00:00:00', 'Received', 1, '2022-01-25 16:07:01', NULL, NULL),
+(12, 'mbusajoseph60@gmail.com', 'Maize,Beans,Pease', '2022-02-11 10:09:58', '02', NULL, '2022-02-11 00:00:00', 'Received', 1, '2022-02-11 12:53:30', NULL, NULL),
+(13, 'mbusajoseph60@gmail.com', 'Matooke,Irish Potatoes,Maize,sugarcanes', '2022-02-20 14:35:41', '02', NULL, '2022-02-27 00:00:00', 'Received', 0, '2022-02-20 17:30:47', NULL, NULL),
+(14, 'douglaskikonyogo@gmail.com', 'Matooke', '2022-02-20 16:27:17', '02', NULL, '2022-02-19 00:00:00', 'pending', 1, '2022-02-20 19:27:17', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -129,7 +151,9 @@ CREATE TABLE `other_donations` (
 --
 
 INSERT INTO `other_donations` (`id`, `email`, `categories`, `donated_at`, `expected_on`, `month`, `donation_status`, `is_public`, `deleted_at`) VALUES
-(1, 'nasasiradevis@gmail.com', 'Administrative Car,Delivery and pick up van,water', '2021-12-07 13:45:47', '2021-11-07 00:00:00', '12', 'pending', 1, NULL);
+(1, 'nasasiradevis@gmail.com', 'Administrative Car,Delivery and pick up van,water', '2022-01-19 11:18:07', '2021-11-07 00:00:00', '12', 'Recieved', 1, NULL),
+(2, 'violakomugisha@gmail.com', 'sugar,milk,soap,', '2022-01-20 14:18:27', '2022-01-20 00:00:00', '01', 'Recieved', 1, NULL),
+(3, 'mbusajoseph60@gmail.com', 'Panado,sugar,Onions,,,Tomatoes,,', '2022-02-05 17:48:22', '2022-02-05 00:00:00', '02', 'pending', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -206,7 +230,12 @@ CREATE TABLE `shoes_donations` (
 --
 
 INSERT INTO `shoes_donations` (`id`, `email`, `quantity`, `donated_at`, `renew`, `expected_on`, `month`, `is_public`, `donation_status`, `created_at`, `update_at`, `deleted_at`) VALUES
-(1, 'lubingaisaac@gmail.com', 20, '2021-12-07 11:37:21', NULL, '2021-12-06 00:00:00', '11', 1, 'pending', '2021-11-22 23:12:25', NULL, NULL);
+(1, 'lubingaisaac@gmail.com', 20, '2022-01-19 14:22:50', NULL, '2021-12-06 00:00:00', '11', 1, 'Recieved', '2021-11-22 23:12:25', NULL, NULL),
+(2, 'mbusajoseph60@gmail.com', 3, '2022-01-19 11:17:08', NULL, '2022-01-18 00:00:00', '01', 0, 'Recieved', '2022-01-18 14:14:51', NULL, NULL),
+(3, 'mbusajoseph60@gmail.com', 4, '2022-01-19 14:22:47', NULL, '2022-01-19 00:00:00', '01', 0, 'Recieved', '2022-01-19 17:21:16', NULL, NULL),
+(4, 'mbusajoseph60@gmail.com', 10, '2022-01-19 14:24:34', NULL, '2022-01-19 00:00:00', '01', 1, 'Recieved', '2022-01-19 17:23:47', NULL, NULL),
+(5, 'violakomugisha@gmail.com', 20, '2022-01-20 14:18:49', NULL, '2022-01-20 00:00:00', '01', 1, 'Recieved', '2022-01-20 13:39:51', NULL, NULL),
+(6, 'violakomugisha@gmail.com', 26, '2022-01-25 13:34:56', NULL, '2022-01-25 00:00:00', '01', 1, 'Recieved', '2022-01-25 16:32:39', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -233,23 +262,26 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone_number`, `account_type`, `password`, `img_url`, `user_agent`, `created_at`, `update_at`) VALUES
-(1, 'Bridget', 'Namugema', 'bridgetnamugema@gmail.com', '0703459872', 'user', '$2y$10$TE4ohZRc/wsCQdMMdNz.C.eHJADF2YSAm4Y16zt1wg4hv40CxU9Ge', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', '2021-11-22 22:47:37', NULL),
-(2, 'Joseph', 'Mbusa', 'mbusajoseph@gmail.com', '0776892301', 'user', '$2y$10$ihEsMvslEYB5vWpYPD.4KOc46YwdJqVVZFefma4Pdp4UA1HfRl.GW', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', '2021-11-22 22:51:32', NULL),
+(1, 'Godfrey', 'Rutaro', 'bridgetnamugema@gmail.com', '0703459872', 'admin', '$2y$10$TE4ohZRc/wsCQdMMdNz.C.eHJADF2YSAm4Y16zt1wg4hv40CxU9Ge', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', '2021-11-22 22:47:37', NULL),
+(2, 'Joseph', 'Mbusa', 'mbusajoseph@gmail.com', '0776892301', 'admin', '$2y$10$ihEsMvslEYB5vWpYPD.4KOc46YwdJqVVZFefma4Pdp4UA1HfRl.GW', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', '2021-11-22 22:51:32', NULL),
 (3, 'Isaac Lubinga', 'Mukiibi', 'mukiibiisaac@gmail.com', '0708963120', 'admin', '$2y$10$enxecq.p3GbOsn79VsE/3.yCjj.FVFHIcx1QWfi3wGX09G8mh8pj2', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', '2021-11-22 22:57:06', NULL),
-(4, 'Isaac Lubinga', 'Mukibi', 'lubingaisaac@gmail.com', '0746589674', 'user', '$2y$10$GxKjbvgUEg5Wz4Fb.xAMtOmaP3hLkRztN25cYsE9MFqYESjORDjdy', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', '2021-11-22 23:00:45', NULL),
-(5, 'Mbusa', 'Joseph', 'mbusajoseph60@gmail.com', '+256773463487', 'user', '$2y$10$uUmYnUMr.zlmC8tDFi3E7eq4ZV5vYXwyUfsgn0JBphXCdK18WKzZa', NULL, '', '2021-12-07 07:22:04', NULL),
-(6, 'Tumuhimbise', 'Godwin', 'usher.godwin@yahoo.com', '0754438448', 'user', '$2y$10$bhXgHdV9tdVm.fF3d2GNge/gAOMvrBLzoCQpyBfmu8Ihf32cnXZMO', NULL, '', '2021-12-07 10:26:26', NULL),
-(7, 'Amumpire', 'Joan', 'detectivejoan@gmail.com', '0775689315', 'user', '$2y$10$8IcxA0WktPTKsShSQg1MpO0My89W.vR8zTqAWZVcSqjRZxYSCUr6S', NULL, '', '2021-12-07 11:40:44', NULL),
-(8, 'Kamukama', 'Solomon', 'solomonkamukama@gmail.com', '0456789315', 'user', '$2y$10$A3/WeZqkhH/3y84bzjHl3ehGUYhfNsF5a3nuv1mLsn3x2QLpFfmiG', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', '2021-12-07 13:09:26', NULL),
-(9, 'Chelmo', 'Joan Somikwo', 'chelimojoan@gmail.com', '0786983245', 'user', '$2y$10$mVnhQTmmIX96CpHffdw1yu1i50ntsqGH9gr79NPwMYL24MdM0oiby', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', '2021-12-07 13:12:36', NULL),
-(10, 'Kabira', 'Shadick', 'kabirashadick@gmail.com', '0765893245', 'user', '$2y$10$eY3/U9tQ4/p.d6CF2r1sn.K433WfDwvTTCTrpNGxQyoAwOTVV2gwu', NULL, '', '2021-12-07 15:05:32', NULL),
+(4, 'Isaac Lubinga', 'Mukibi', 'lubingaisaac@gmail.com', '0746589674', 'admin', '$2y$10$GxKjbvgUEg5Wz4Fb.xAMtOmaP3hLkRztN25cYsE9MFqYESjORDjdy', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', '2021-11-22 23:00:45', NULL),
+(5, 'Mbusa', 'Joseph', 'mbusajoseph60@gmail.com', '+256773463487', 'admin', '$2y$10$uUmYnUMr.zlmC8tDFi3E7eq4ZV5vYXwyUfsgn0JBphXCdK18WKzZa', NULL, '', '2021-12-07 07:22:04', NULL),
+(6, 'Tumuhimbise', 'Godwin', 'usher.godwin@yahoo.com', '0754438448', 'admin', '$2y$10$bhXgHdV9tdVm.fF3d2GNge/gAOMvrBLzoCQpyBfmu8Ihf32cnXZMO', NULL, '', '2021-12-07 10:26:26', NULL),
+(7, 'Amumpire', 'Joan', 'detectivejoan@gmail.com', '0775689315', 'admin', '$2y$10$8IcxA0WktPTKsShSQg1MpO0My89W.vR8zTqAWZVcSqjRZxYSCUr6S', NULL, '', '2021-12-07 11:40:44', NULL),
+(8, 'Kamukama', 'Solomon', 'solomonkamukama@gmail.com', '0456789315', 'admin', '$2y$10$A3/WeZqkhH/3y84bzjHl3ehGUYhfNsF5a3nuv1mLsn3x2QLpFfmiG', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', '2021-12-07 13:09:26', NULL),
+(9, 'Chelmo', 'Joan Somikwo', 'chelimojoan@gmail.com', '0786983245', 'admin', '$2y$10$mVnhQTmmIX96CpHffdw1yu1i50ntsqGH9gr79NPwMYL24MdM0oiby', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', '2021-12-07 13:12:36', NULL),
+(10, 'Kabira', 'Shadick', 'kabirashadick@gmail.com', '0765893245', 'admin', '$2y$10$eY3/U9tQ4/p.d6CF2r1sn.K433WfDwvTTCTrpNGxQyoAwOTVV2gwu', NULL, '', '2021-12-07 15:05:32', NULL),
 (11, 'Namugema', 'Bridget', 'prettybridgetgema@gmail.com', '07896532489', 'user', '$2y$10$.1jiCQiGHaHs2eGXrIY8oO8hk5ZLqMXAj.wkyZNWHXxkq/BcnaSUu', NULL, '', '2021-12-07 15:09:30', NULL),
-(12, 'Batembe', 'Emmy', 'ascendemmy06@gmail.com', '0789653214', 'user', '$2y$10$LGmjYXWbK8DNtKYqvdoLF.XAKvRLXN7M/lK7wDzM/wqKObxKdZVOW', NULL, '', '2021-12-07 15:12:56', NULL),
+(12, 'Batembe', 'Emmy', 'ascendemmy06@gmail.com', '0789653214', 'admin', '$2y$10$LGmjYXWbK8DNtKYqvdoLF.XAKvRLXN7M/lK7wDzM/wqKObxKdZVOW', NULL, '', '2021-12-07 15:12:56', NULL),
 (13, 'Nasasira', 'Devis', 'nasasiradevis@gmail.com', '0789653245', 'user', '$2y$10$bvEnVa2t8ihZDEjoPYyszun5hmRj6lPeGXlQ0z6/JZ3Y5tIibUBtm', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', '2021-12-07 16:42:06', NULL),
-(19, 'Lubinga', 'Isaac', 'lubinga.isaac@gmail.com', '0775000477', 'user', '$2y$10$XksNpuNEDf61b8p2WyIPxuRhwGSzR09jVHpAQhqDNFRVkyBd5sOqa', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '2021-12-16 13:41:50', NULL),
-(20, 'Viola', 'Komugisha', 'violakomugisha@gmail.com', '0705580839', 'user', '$2y$10$pEUnR2ZB5KDDf5rke1cQcunBc90Z8ccFdjZVk2vFfTw64QxFpDHoi', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '2021-12-20 20:47:34', NULL),
-(21, 'Buwembo', 'Julius', 'buwembojulius2@gmail.com', '0750047518', 'user', '$2y$10$pu9GYvGiOzIG3idRz7MJZ.36FAf26VpiRN2WB6oCC.p66lkyYhM5S', NULL, '', '2021-12-20 20:51:31', NULL),
-(28, 'Tumuhimbise', 'Godwin', 'godwintumuhimbise96@gmail.com', '0754438448', 'user', '$2y$10$xd7w9QDYQbY4r8cbjC9vy.EyRSEthp1aTNsSLunqC6OCu.OtExAH6', NULL, '', '2021-12-20 22:07:59', NULL);
+(19, 'Lubinga', 'Isaac', 'lubinga.isaac@gmail.com', '0775000477', 'admin', '$2y$10$XksNpuNEDf61b8p2WyIPxuRhwGSzR09jVHpAQhqDNFRVkyBd5sOqa', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '2021-12-16 13:41:50', NULL),
+(20, 'Viola', 'Komugisha', 'violakomugisha@gmail.com', '0705580839', 'admin', '$2y$10$pEUnR2ZB5KDDf5rke1cQcunBc90Z8ccFdjZVk2vFfTw64QxFpDHoi', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '2021-12-20 20:47:34', NULL),
+(21, 'Buwembo', 'Julius', 'buwembojulius2@gmail.com', '0750047518', 'admin', '$2y$10$pu9GYvGiOzIG3idRz7MJZ.36FAf26VpiRN2WB6oCC.p66lkyYhM5S', NULL, '', '2021-12-20 20:51:31', NULL),
+(28, 'Tumuhimbise', 'Godwin', 'godwintumuhimbise96@gmail.com', '0754438448', 'user', '$2y$10$xd7w9QDYQbY4r8cbjC9vy.EyRSEthp1aTNsSLunqC6OCu.OtExAH6', NULL, '', '2021-12-20 22:07:59', NULL),
+(29, 'Charles', 'Thembo', 'ashley7520charles@gmail.com', '0787444081', 'user', '$2y$10$uI2e2TI95.iKLiJKvSLJSOgDVhYZG9EjWYu2NYJBlPm6Hdmx0VAt.', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36', '2022-01-14 18:12:17', NULL),
+(50, 'Godfrey', 'Rutaro', 'rutaroroots@gmail.com', '0701557601', 'user', '$2y$10$uI2e2TI95.iKLiJKvSLJSOgDVhYZG9EjWYu2NYJBlPm6Hdmx0VAt.', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', '2022-02-20 00:00:00', NULL),
+(51, 'Douglas', 'Kikonyogo', 'douglaskikonyogo@gmail.com', '0788837370', 'user', '$2y$10$0jC7eEhuZoroyjC0Kby3RePKdqOt0AEtKE2fca2sYyTpUDZcl.NVu', NULL, '', '2022-02-20 19:21:50', NULL);
 
 --
 -- Indexes for dumped tables
@@ -317,13 +349,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `clothes_donations`
 --
 ALTER TABLE `clothes_donations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `food_donations`
 --
 ALTER TABLE `food_donations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -335,7 +367,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `other_donations`
 --
 ALTER TABLE `other_donations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `password_resets`
@@ -353,13 +385,13 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT for table `shoes_donations`
 --
 ALTER TABLE `shoes_donations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- Constraints for dumped tables

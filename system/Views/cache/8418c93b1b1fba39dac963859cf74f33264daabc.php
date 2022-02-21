@@ -41,7 +41,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <img src="<?php echo e(asset('imgs/icons/logo.png')); ?>" class="rounded-circle" height="50" alt="logo"/>
                 </div>
-                <div class="sidebar-brand-text mx-3">SANYA BABIES HOME</div>
+                <div class="sidebar-brand-text mx-3">SANYU BABIES HOME</div>
             </a>
 
             <!-- Divider -->
@@ -216,8 +216,7 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="javascript:;" onclick="printReport('/admin/donations/report')" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        
                     </div>
 
                     <?php $__env->startSection('content'); ?>

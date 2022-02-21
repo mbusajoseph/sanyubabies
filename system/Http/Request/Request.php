@@ -128,8 +128,13 @@ class Request {
         $key = trim($key);
 
         if (isset($_POST[$key]))
+        {
+            if(is_array($_POST[$key]))
+            {
+                return $_POST[$key];
+            }
             return filter_var($this->xss_clean($_POST[$key]), FILTER_SANITIZE_STRING);
-        
+        }
         return $default;
     }
 

@@ -14,13 +14,14 @@
                         <?php if($cat === 'clothes' || $cat === 'food' || $cat === 'others'): ?>
                         <th>Items</th>
                         <?php elseif($cat === 'funds'): ?>
-                        <th>Amount (US Dollars)</th>
+                        <th>Amount (UGX)</th>
                         <?php elseif($cat === 'shoes'): ?>
                         <th>Pairs of Shoes</th>  
                         <?php endif; ?>
                         <th>Donated on</th>
                         <th>Is Public</th>
-                    </tr>
+                        <th>Status</th>
+                     </tr>
 
                     <tbody>
                         <?php $no = 0; ?>
@@ -28,7 +29,8 @@
                             <?php $no++; ?>
                             <tr>
                                 <td><?php echo e($no); ?></td>
-                                <td><?php echo e($item->first_name . " " . $item->last_name); ?></td>
+                                <td><?php echo e($item->first_name . " " . $item->last_name); ?><br>
+                                    <?php echo e($item->phone_number); ?></td>
                                 <td>
                                     <?php if($cat === 'clothes' || $cat === 'food' || $cat === 'others'): ?>
                                         <?php $category = explode(',', $item->categories) ?>
@@ -38,7 +40,7 @@
                                         <?php elseif($cat === 'shoes'): ?>
                                         <?php echo e($item->quantity); ?> Pairs
                                     <?php elseif($cat === 'funds'): ?>
-                                    $<?php echo e(number_format(ceil($item->amount / 3545), 2)); ?>
+                                    <?php echo e(number_format($item->amount)); ?>
 
                                     <?php endif; ?>
                                 </td>
@@ -48,7 +50,20 @@
                                 <?php else: ?>
                                 <td><?php echo e($item->is_public == 1 ? "YES" : "NO"); ?></td>
                                 <?php endif; ?>
-                            </tr>
+                              
+                                <?php if($cat === 'clothes' || $cat === 'food' || $cat === 'others' || $cat === 'shoes'): ?>
+                                    <td>
+                                        <?php if($item->donation_status != 'Received'): ?>
+                                            <a href="/admin/update_satus/<?php echo e($item->id); ?>/<?php echo e($cat); ?>"><?php echo e($item->donation_status); ?></a>
+                                            <?php else: ?>
+                                            Received
+                                        <?php endif; ?>
+                                    </td>
+                                <?php else: ?>
+                                <td> Received</td>
+
+                                <?php endif; ?>
+                                </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>
                 </thead>
@@ -56,4 +71,4 @@
         </div>
     </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('admin.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\charity\app\views/admin/donations/listing.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\sanyubabies\app\views/admin/donations/listing.blade.php ENDPATH**/ ?>

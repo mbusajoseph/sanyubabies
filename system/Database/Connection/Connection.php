@@ -1,6 +1,6 @@
 <?php
 namespace System\Database\Connection;
-require_once APP_PATH.'config/database.php';
+require_once APP_PATH.'Config/database.php';
 
 use Exception;
 use PDO;

@@ -278,9 +278,8 @@ class QueryBuilder extends Transactions implements Query
     {
         $sub_query = "SELECT * FROM {$this->tableName} AND ";
         $sub_query_len = strlen($sub_query);
-        echo $this->query . "<br/>";
         $this->query = substr($this->query, $sub_query_len, strlen($this->query) - $sub_query_len);
-        echo $this->query . "<br/>";
+
         $this->query = "SELECT $columns FROM {$this->tableName} WHERE " . $this->query;
         $this->query = trim($this->query);
     }
@@ -332,4 +331,5 @@ class QueryBuilder extends Transactions implements Query
         
         return $this;
     }
+    
 }

@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="navbar-nav ml-auto">
-                    @if (!isset($user))
+                    @if (empty($user->first_name))
                     <a href="{{ url('donations/account') }}" class="nav-item nav-link">Create Account</a>
                     <a href="{{ url() }}" class="nav-item nav-link">Login</a>
                     @else
@@ -69,12 +69,14 @@
     @show
 
     <footer class="container-fluid bg-pup mt-3 sticky-footer">
-        <div class="d-flex justify-content-between ml-4">
-            <div class="mb-4 text-center">
-                <img src="{{ asset('imgs/icons/logo.png') }}" width="50%" class="rounded-circle"/>
-                <h4 class="font-weight-bold">SANYU BABIES HOME</h4>
+        <div class="row justify-content-center ml-4">
+            <div class="col-md-3">
+                <div class="mb-4 text-center">
+                    <img src="{{ asset('imgs/icons/logo.png') }}" width="50%" class="rounded-circle"/>
+                    <h4 class="font-weight-bold">SANYU BABIES HOME</h4>
+                </div>
             </div>
-            <div class="mb-3">
+            <div class="col-md-3">
                 <ul class="unstyled">
                     <h5><u>Donate</u></h5>
                     <li>
@@ -94,7 +96,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="mb-3">
+            <div class="col-md-3">
                 <ul class="unstyled">
                     <h5><u>Donated Items</u></h5>
                     <li>
@@ -112,7 +114,7 @@
                 </ul>
             </div>
 
-            <div class="mb-3">
+            <div class="col-md-3">
                 <ul class="unstyled">
                     <h5><u>Contacts Us</u></h5>
                     <li>

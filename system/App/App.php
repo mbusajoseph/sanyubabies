@@ -1,12 +1,12 @@
 <?php
 namespace System\App;
+strtolower(env("ERROR_REPORTING")) === "true" ? ini_set('display_errors', 1) : ini_set('display_errors', 0);
+
 session_start();
 
 define("VERSION", '1.0.0');
 
 include_once BASE_PATH.'/vendor/autoload.php';
-
-strtolower(env("ERROR_REPORTING")) === "true" ? ini_set('display_errors', 1) : ini_set('display_errors', 0);
 
 use System\Routes\Route;
 use System\Http\Request\Request;
@@ -111,7 +111,7 @@ class App
 
                     $class_ucfirst = ucfirst($val_route[0]);
                     
-                    $class = New $class_ucfirst;
+                    $class = new $class_ucfirst;
                     if ($_SERVER['REQUEST_METHOD'] == "POST"){
                         return call_user_func_array(array($class, $val_route[1]), [new Request]);
                     }
@@ -143,11 +143,8 @@ class App
                     $dynamic_route_reversed = implode("/", $dynamic_route_reversed);
                     if (strcmp($args_array_reversed, $dynamic_route_reversed) == 0) {
                         //When the strings match, we then route the request to the called class and method
-                        if(is_callable($val) && is_object($val))
-                        {
-                            return call_user_func_array($val, $func_arguments);
-                        }
-                        if(isset($_POST['_method']) and $_POST['_method'] == "DELETE")
+
+                        if(isset($_POST['_method']) && $_POST['_method'] == "DELETE")
                         {
                             $val = implode('::', $val);   
                         }
@@ -155,7 +152,7 @@ class App
                         
                         $class_ucfirst = ucfirst($val_route[0]);
                         
-                        $class = New  $class_ucfirst;
+                        $class = new  $class_ucfirst;
                         return call_user_func_array(array($class, $val_route[1]), $func_arguments);
                     }
                 } else

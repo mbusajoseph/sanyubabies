@@ -60,7 +60,6 @@ class Schema extends BluePrint
     public static function dropIfExists($table)
     {
         self::$rollBackMigration = "DROP TABLE IF EXISTS $table;";
-        self::$table = $table;
     }
 
     public static function table(string $table, Closure $callback)

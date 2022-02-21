@@ -355,26 +355,21 @@ class ColumnDefination
      */
     public function foreign(string $column)
     {
-        $constraint  = self::$table . "_" . $column;
+        $constraint = self::$table . "_" . $column;
         self::$migration .= "\n\t CONSTRAINT fk_" ."$constraint FOREIGN KEY(`".$column . "`) ";
         return $this;
     }
 
 
     /**
-     * Specify the referenced table and column
+     * Specify the referenced table
      *
      * @param string $table
-     * @param string $column
      * @return \System\Database\Schema\ColumnDefination
      */
-    public function references(string $table, $column = null)
+    public function references(string $table)
     {
         self::$migration .= "REFERENCES $table(`";
-        if($column !== null)
-        {
-            self::$migration .= "$column`), ";  
-        }
         return $this;
     }
 
@@ -445,7 +440,7 @@ class ColumnDefination
      * Create a new unsigned big integer (8-byte) column on the table.
      *
      * @param string $column
-     * @return $this // medrine 
+     * @return $this
      */
     public function foreignId(string $column, bool $null = false)
     {
@@ -455,6 +450,7 @@ class ColumnDefination
             self::$migration .= "NULL, ";
         }
         self::$migration .= "NOT NULL, ";
+
         $constraint = self::$table . "_" . $column;
         self::$migration .= "\n\tCONSTRAINT fk_" ."$constraint FOREIGN KEY(`". $column . "`) REFERENCES ";
         return $this;
@@ -499,8 +495,8 @@ class ColumnDefination
      */
     public function dropConstrainedForeignId($column) {
         $table = self::$table;
-        $key = $table . "_" . $column;
-        self::$dropForeignkey[] = "ALTER TABLE `$table` DROP FOREIGN KEY fk_".$key.";";
+        $constraint = $table . "_" . $column;
+        self::$dropForeignkey[] = "ALTER TABLE `$table` DROP FOREIGN KEY fk_".$constraint.";";
         self::$dropForeignkey[] = "ALTER TABLE `$table` DROP COLUMN ".$column.";";
     }
 

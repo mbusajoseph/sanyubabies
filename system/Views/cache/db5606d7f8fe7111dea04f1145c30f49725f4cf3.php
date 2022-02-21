@@ -1,6 +1,6 @@
-@extends('base')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <div class="container">
         <div class="row justify-content-center mt-3">
             <div class="col-md-12 col-lg-8 col-xl-8">
@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-lg-4 col-xl-4">
                             <div class="text-center">
-                                <img src="{{ asset('imgs/icons/logo.png') }}" alt="site logo" width="200px"/>
+                                <img src="<?php echo e(asset('imgs/icons/logo.png')); ?>" alt="site logo" width="200px"/>
                                 <h3 class="text-pup font-weight-bold">Sanyu Babies Home <i class="fas fa-check-circle text-success"></i> </h3>
                             </div>
                             <div class="response"></div>
@@ -16,8 +16,8 @@
     
                         <div class="col-lg-8 col-xl-8">
                             <h4 class="font-weight-bold text-info">Create Account</h4>
-                            <form action="{{ url('user/store') }}" method="post" id="accountForm">
-                                @csrf
+                            <form action="<?php echo e(url('user/store')); ?>" method="post" id="accountForm">
+                                <?php echo csrf_field(); ?>
                                 <div class="form-group">
                                     <label for="email">Email</label>
                                     <input type="text" name="email" class="form-control bg-light" placeholder="enter your email" autocomplete="off" required/>
@@ -60,4 +60,5 @@
             </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\sanyubabies\app\views/account.blade.php ENDPATH**/ ?>

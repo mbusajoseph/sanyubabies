@@ -13,7 +13,6 @@ if(empty(trim($root)))
 {
     $root = @getcwd();
 }
-$root = str_replace('public', '', $root);
 require_once $root . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(dirname( __DIR__));
 $dotenv->safeLoad();
@@ -300,14 +299,27 @@ function response()
 
 
 
-/**
- * Boostrap 4 Alerts
- *
- * @return \System\Http\Response\Alert\Alert
- */
-function alert()
+if(!function_exists('alert'))
 {
-   return new Alert(); 
+     /**
+     * Boostrap 4 Alerts
+     *
+     * @return \System\Http\Response\Alert\Alert
+     */
+    function alert()
+    {
+    return new Alert(); 
+    }
 }
 
+if(!function_exists('_token'))
+{
+    /**
+    * Get the CRSF Token
+    */
+    function _token()
+    {
+        return CRSF::crsfTokenValue();
+    }
+}
 

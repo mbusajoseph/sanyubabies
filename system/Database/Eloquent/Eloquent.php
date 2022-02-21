@@ -14,12 +14,8 @@ class Eloquent extends FluentApi
 
     protected static function decamelize(string $camelCase)
     {
-        return Grammer::plural(strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $camelCase)));
-    }
-
-    protected function snakeToCamel($input)
-    {
-        return lcfirst(str_replace(' ', '', ucwords(str_replace('_', ' ', $input))));
+      $camel=preg_replace('/(?!^)[[:upper:]][[:lower:]]/', '$0', preg_replace('/(?!^)[[:upper:]]+/', "_".'$0', $camelCase));
+      return Grammer::plural(strtolower($camel));
     }
 
 

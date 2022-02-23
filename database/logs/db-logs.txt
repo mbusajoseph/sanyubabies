@@ -4,3 +4,4 @@
 
  ----------------------------------------------------------------------- 
 
+[Wed 23 Feb 2022 20:42:23]	SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens

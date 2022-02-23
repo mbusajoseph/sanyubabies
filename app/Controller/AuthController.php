@@ -25,7 +25,7 @@ class AuthController extends BaseController
         }
 
         $response = [
-            'alert' => "Authenticated"
+            'message' => "Authenticated successfully"
         ];
 
         switch($user->account_type)
@@ -43,7 +43,11 @@ class AuthController extends BaseController
 
     public static function isLoggedIn()
     {
-        return (new self)->session()->contains('user');
+        // session_start();
+        if(!isset($_SESSION['user']))
+        {
+            exit("<script> window.location.href = window.location.origin; </script>");
+        }
     }
 
     public function logout()

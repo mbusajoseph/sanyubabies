@@ -8,20 +8,19 @@ use App\Models\FoodDonation;
 use App\Models\OtherDonation;
 use App\Models\Payment;
 use App\Models\ShoesDonation;
-use System\Database\DB;
 
 class AdminDashboard extends BaseController 
  { 
 
-    public function __construct()
+    public function isLoggedIn()
     {
-        if(!AuthController::isLoggedIn())
-        {
-            return redirect();
-        }
+        AuthController::isLoggedIn();
     }
     public function index()
     {
+        
+        $this->isLoggedIn();
+
         $context = [
             'title' => "DASHBOARD",
             'user' => session('user')
@@ -33,6 +32,7 @@ class AdminDashboard extends BaseController
 
     public function donations($cat)
     {
+        $this->isLoggedIn();
         $cat = strtolower($cat);
         $columns = 'first_name, last_name, phone_number, donated_at, ';
         switch($cat)
@@ -83,6 +83,7 @@ class AdminDashboard extends BaseController
 
     public function donationCharts()
     {
+        $this->isLoggedIn();
         $context = [
             'title' => "DASHBOARD | DONATION CHARTS",
             'user' => !empty(session('user')) ? session('user') : array_to_object(array())
@@ -93,6 +94,7 @@ class AdminDashboard extends BaseController
 
     public function donationsReport()
     {
+        $this->isLoggedIn();
         return render('admin.donations.report', []);  
     }
  }

@@ -14,6 +14,7 @@ class DonationChart extends BaseController
     {
         $request = new Request();
         $donation = $request->get('q');
+        $year = $request->get('y', date("Y"));
         $is_specific_user = $request->get('specific', 0);
 
         $donationChart = array();
@@ -25,12 +26,15 @@ class DonationChart extends BaseController
             {
                 $query_month = "0$i";
             }
-            $num_donation = DB::table($donation)->where('month', $query_month)->count();
+  
+            $sql = "SELECT * FROM {$donation} WHERE `month` = ? AND donated_at LIKE ?";
+            $num_donation = DB::query($sql)->bindings([$query_month, "%{$year}%"])->count();
             if($is_specific_user == 1)
             {
                 $user = $_SESSION['user'];
-                $num_donation = DB::table($donation)->where('month', $query_month)
-                ->where('email', $user->email)->count();  
+             
+                $sql = "SELECT * FROM {$donation} WHERE `month` = ? AND `email` = ? AND donated_at LIKE ?";
+                $num_donation = DB::query($sql)->bindings([$query_month, $user->email, "%{$year}%"])->count();  
             }
             $donationChart[] = array("month" => $this->months[$i], "donation" => $num_donation);
         }

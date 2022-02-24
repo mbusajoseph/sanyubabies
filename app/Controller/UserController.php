@@ -9,10 +9,7 @@ use \System\Http\Request\Request;
 	 
 		public function __construct()
 		{
-			if(!AuthController::isLoggedIn())
-			{
-				return redirect();
-			}
+			AuthController::isLoggedIn();
 		}
  		/**
 		* Display a listing of the resource.

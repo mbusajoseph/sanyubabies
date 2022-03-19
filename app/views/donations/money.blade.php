@@ -21,7 +21,7 @@
 							
 							<span class="text-success font-weight-bolder">The donations are allowed in UGX shillings</span>
 								<hr>
-							<a href="https://dashboard.flutterwave.com/donate/fexdgeyiz6gg" class="btn btn-success">  Donate Now </a>
+							{{-- <a href="https://dashboard.flutterwave.com/donate/fexdgeyiz6gg" class="btn btn-success">  Donate Now </a> --}}
 						</div>
 					</div>
 				</div>

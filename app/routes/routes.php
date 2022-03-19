@@ -10,8 +10,7 @@ use App\Controller\UserController;
 use App\Controller\UserDashboard;
 use System\Routes\Route;
 
-Route::get('/', [Home::class, 'index']);
-Route::group(['middleware' => 'auth'], function () {
+Route::get('', [Home::class, 'index']);
 // donation routes
 	Route::group(['prefix' => 'donations'], function(){
 
@@ -61,5 +60,3 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::post('/user', [AuthController::class, 'authenticate']);
 		Route::get('/user/logout', [AuthController::class, 'logout']);
 	});
-
-});

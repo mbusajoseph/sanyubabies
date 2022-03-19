@@ -2,7 +2,7 @@ if(document.getElementById('donate'))
 {
 	new Payments(
 		{
-			publicKey: 'FLWPUBK_TEST-25fb3f0d5bc18b74ddf4297510336c01-X', 
+			publicKey: 'FLWPUBK-df942bd2c2335ecef5b066a422ceb60-X', 
 			buttonText: 'Donate Now', 
 			formId: 'donate',
 			checkBoxText: 'Make my donation public',

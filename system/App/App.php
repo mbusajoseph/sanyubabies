@@ -43,9 +43,9 @@ class App
      */
     public function run()
     {
-        require_once BASE_PATH .'/system/Maintenance/index.php';
-        return false;
-        //return $this->__init__();
+        // require_once BASE_PATH .'/system/Maintenance/index.php';
+        // return false;
+        return $this->__init__();
     }
 
     private function __init__() {

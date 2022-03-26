@@ -9,8 +9,8 @@ if(document.getElementById('donate'))
 			payment: {
 				currency: 'UGX',
 				country: 'UGANDA',
-				initUrl: '/payments/init',
-				callback: '/payments/verify'
+				initUrl: `${window.location.origin}/payments/init`,
+				callback: `${window.location.origin}/payments/verify`
 			},
 			app: {
 				titile: 'SANYU BABIES HOME',

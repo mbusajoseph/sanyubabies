@@ -131,13 +131,14 @@
             </div>
         </div>
     </footer>
-    <section id="js">
-        <script type="text/javascript" src="{{ asset('jquery/jquery-3.6.0.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('bootstrap/js/popper.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-    </section>
+    <script type="text/javascript" src="{{ asset('jquery/jquery-3.6.0.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bootstrap/js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="{{ asset('js/app-ajax.js') }}"></script>
+    <script src="{{ asset('/js/payments.min.js')}}"></script>
+    <script src="{{ asset('/js/flutterwave-api.js') }}"></script>
+    <script src="{{ asset('/js/auth.js')}} "></script>
     @yield('scripts')
 </body>
 </html>

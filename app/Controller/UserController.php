@@ -6,11 +6,6 @@ use \System\Http\Request\Request;
 
  class UserController extends BaseController 
  { 
-	 
-		public function __construct()
-		{
-			AuthController::isLoggedIn();
-		}
  		/**
 		* Display a listing of the resource.
 		* @return \System\Http\Response\Response
@@ -61,21 +56,21 @@ use \System\Http\Request\Request;
 			if(User::find($email, 'email')->doesNotExist())
 			{
 				$newUser = new User($user);
-				$message = alert()->success("Your account was created successfully!");
+				$message = alert()->success("Your account was created successfully! Please login with your account details.");
 				if(!$newUser->save())
 				{
 					$message = alert()->failure("Failed to create your account!");
 				}
 
-				return response()->send(200, $message);
+				return response()->json(200, $message);
 			}
 
 			if(!User::find($email, 'email')->update($user))
 			{
-				return response()->send(202, alert()->failure('Accont not created!'));
+				return response()->json(202, alert()->failure('Accont not created!'));
 			}
 
-			return response()->send(200, alert()->success('Accont created successfully!'));
+			return response()->json(200, alert()->success('Your account was created successfully! Please login with your account details.'));
 
 
  		}

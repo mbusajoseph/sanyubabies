@@ -10,13 +10,12 @@ use App\Models\ShoesDonation;
 class UserDashboard extends BaseController 
  { 
 
+    public function __construct()
+    {
+        AuthController::isLoggedIn();
+    }
     public function index()
     {
-        if(!AuthController::isLoggedIn())
-        {
-            return redirect();
-        }
-
         $context = [
             'title' => "DASHBOARD",
             'user' => !empty(session('user')) ? session('user') : ''

@@ -4,6 +4,7 @@
     <div class="container">
         <div class="row justify-content-center mt-3">
             <div class="col-md-12 col-lg-8 col-xl-8">
+                <div class="response"></div>
                 <div class="card card-body shadow">
                     <div class="row">
                         <div class="col-lg-4 col-xl-4">
@@ -11,9 +12,8 @@
                                 <img src="{{ asset('imgs/icons/logo.png') }}" alt="site logo" width="200px"/>
                                 <h3 class="text-pup font-weight-bold">Sanyu Babies Home <i class="fas fa-check-circle text-success"></i> </h3>
                             </div>
-                            <div class="response"></div>
                         </div>
-    
+                        
                         <div class="col-lg-8 col-xl-8">
                             <h4 class="font-weight-bold text-info">Create Account</h4>
                             <form action="{{ url('user/store') }}" method="post" id="accountForm">

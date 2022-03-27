@@ -44,9 +44,9 @@ class AuthController extends BaseController
     public static function isLoggedIn()
     {
         // session_start();
-        if(!isset($_SESSION['user']))
+        if(!key_exists('user', $_SESSION))
         {
-            exit("<script> window.location.href = window.location.origin; </script>");
+            return exit("<script>window.location.href = window.location.origin </script>");
         }
     }
 

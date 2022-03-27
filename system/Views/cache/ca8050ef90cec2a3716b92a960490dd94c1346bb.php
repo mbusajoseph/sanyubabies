@@ -131,13 +131,14 @@
             </div>
         </div>
     </footer>
-    <section id="js">
-        <script type="text/javascript" src="<?php echo e(asset('jquery/jquery-3.6.0.min.js')); ?>"></script>
-        <script type="text/javascript" src="<?php echo e(asset('bootstrap/js/popper.min.js')); ?>"></script>
-        <script type="text/javascript" src="<?php echo e(asset('bootstrap/js/bootstrap.min.js')); ?>"></script>
-    </section>
+    <script type="text/javascript" src="<?php echo e(asset('jquery/jquery-3.6.0.min.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(asset('bootstrap/js/popper.min.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(asset('bootstrap/js/bootstrap.min.js')); ?>"></script>
     <script src="<?php echo e(asset('js/scripts.js')); ?>"></script>
     <script src="<?php echo e(asset('js/app-ajax.js')); ?>"></script>
+    <script src="<?php echo e(asset('/js/payments.js')); ?>"></script>
+    <script src="<?php echo e(asset('/js/flutterwave-api.js')); ?>"></script>
+    <script src="<?php echo e(asset('/js/auth.js')); ?> "></script>
     <?php echo $__env->yieldContent('scripts'); ?>
 </body>
 </html><?php /**PATH C:\xampp\htdocs\sanyubabies\app\views/base.blade.php ENDPATH**/ ?>

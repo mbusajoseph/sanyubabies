@@ -28,13 +28,19 @@ $(document).ready(function(){
                 $("#register-btn").attr("disabled", true);
                 $("#register-btn").html("<span class='spinner-border spinner-border-sm text-light'></span> creating...");
             },
-            success: (data) => {
-                $(".response").html(data);
+            success: response => {
+                if (response.status === 200) {
+                    $(".response").html(response.message)
+                    $("#accountForm").trigger('reset');
+                    setInterval(() => {
+                        return window.location.href = window.location.origin
+                    }, 2000)
+                }
+                $(".response").html(response.message);
             },
             complete: () => {
                 $("#register-btn").attr('disabled', false);
                 $("#register-btn").html("Create My Account");
-                $("#accountForm").trigger('reset');
             }
         });
     });

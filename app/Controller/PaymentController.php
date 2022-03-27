@@ -82,13 +82,13 @@ class PaymentController extends BaseController
 
         if(User::find($email, 'email')->exists())
         {
-            $user['consent'] = $request->post('consent', 0);
+            $user['consent'] = $request->post('isChecked', 0);
             $user['amount'] = $request->post('amount');
             session(['user' => array_to_object($user)]);
             return true;
         }
         $newUser = new User($user);
-        $user['consent'] = $request->post('consent', 0);
+        $user['consent'] = $request->post('isChecked', 0);
         $user['amount'] = $request->post('amount');
         session(['user' => array_to_object($user)]);
         return $newUser->save();

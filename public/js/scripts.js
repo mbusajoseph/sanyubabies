@@ -34,11 +34,3 @@ function require_once(file = [])
         }
     }
 }
-
-var appScripts = [
-    '/js/payments.min.js',
-    '/js/flutterwave-api.js',
-    '/js/auth.js'
-];
-
-require_once(appScripts);

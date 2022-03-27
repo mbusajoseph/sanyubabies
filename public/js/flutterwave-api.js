@@ -13,8 +13,8 @@ if(document.getElementById('donate'))
 				callback: '/payments/verify'
 			},
 			app: {
-				titile: 'SANYU BABIES HOME',
-				logo: window.location.origin + '/imgs/icons/logo.png'
+				title: 'SANYU BABIES HOME',
+				logo: '/imgs/icons/logo.png'
 			},
 			csrf: document.querySelector("input[name='_token'").value,
 		});

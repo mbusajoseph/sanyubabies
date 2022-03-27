@@ -136,7 +136,7 @@
     <script type="text/javascript" src="<?php echo e(asset('bootstrap/js/bootstrap.min.js')); ?>"></script>
     <script src="<?php echo e(asset('js/scripts.js')); ?>"></script>
     <script src="<?php echo e(asset('js/app-ajax.js')); ?>"></script>
-    <script src="<?php echo e(asset('/js/payments.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('/js/payments.js')); ?>"></script>
     <script src="<?php echo e(asset('/js/flutterwave-api.js')); ?>"></script>
     <script src="<?php echo e(asset('/js/auth.js')); ?> "></script>
     <?php echo $__env->yieldContent('scripts'); ?>
